@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket.csproj": {}
+    "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\MiniMarket.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket.csproj": {
+    "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\MiniMarket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket.csproj",
+        "projectUniqueName": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\MiniMarket.csproj",
         "projectName": "MiniMarket",
-        "projectPath": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket.csproj",
+        "projectPath": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\MiniMarket.csproj",
         "packagesPath": "C:\\Users\\Liza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\obj\\",
+        "outputPath": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -48,6 +48,44 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.15, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[5.3.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

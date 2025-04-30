@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MiniMarket")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d20f9ef86a45030e09b3ceabe46cf262363d81b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MiniMarket")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MiniMarket")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
