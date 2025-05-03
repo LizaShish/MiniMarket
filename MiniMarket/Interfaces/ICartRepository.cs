@@ -1,11 +1,13 @@
-using MiniMarket.DTOs;
+using MiniMarket.Models;
+
 
 namespace MiniMarket.Interfaces;
 
-public interface ICartService
+public interface ICartRepository
 {
-    Task<CartDTO> GetCart(int userId);
+    Task<Cart> GetCart(int userId);
     Task AddToCartAsync(int userId, int productId, int quantity);
     Task RemoveFromCartAsync(int userId, int productId);
     Task ClearCartAsync(int userId);
 }
+

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "YlWJN5jpNQ4=",
+  "dgSpecHash": "3F0s97RGvds=",
   "success": true,
   "projectFilePath": "C:\\Users\\Liza\\RiderProjects\\MiniMarket\\MiniMarket\\MiniMarket\\MiniMarket.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Liza\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\bootstrap\\5.3.5\\bootstrap.5.3.5.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Liza\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.3.0\\microsoft.aspnetcore.authentication.2.3.0.nupkg.sha512",

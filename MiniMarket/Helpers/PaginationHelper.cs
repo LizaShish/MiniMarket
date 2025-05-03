@@ -1,6 +1,5 @@
 using MiniMarket.Models;
 namespace MiniMarket.Helpers;
-
 public class PaginationHelper
 {
  public static IQueryable<P> Paginate<P>(IQueryable<P> query, int page, int pageSize)
