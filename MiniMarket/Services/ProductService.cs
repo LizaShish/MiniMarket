@@ -2,6 +2,8 @@ using AutoMapper;
 using MiniMarket.DTOs;
 using MiniMarket.Interfaces;
 using MiniMarket.Models;
+using System.Linq;
+
 
 namespace MiniMarket.Services;
 public class ProductService : IProductService
@@ -45,6 +47,22 @@ public class ProductService : IProductService
         await _productRepository.DeleteAsync(id);
     }
     
-    
+    public IQueryable<ProductDTO> GetFilteredProducts(string? category, string? searchQuery)
+    {
+        var query = _productRepository.GetQueryable();
 
+        if (!string.IsNullOrWhiteSpace(category))
+            query = query.Where(p => p.Category == category);
+
+        if (!string.IsNullOrWhiteSpace(searchQuery))
+            query = query.Where(p => p.ProductName.Contains(searchQuery));
+
+        return query.Select(p => new ProductDTO
+        {
+            Id = p.Id,
+            Name = p.ProductName,
+            Price = p.Price,
+            ImageUrl = p.ImageUrl
+        });
+    }
 }

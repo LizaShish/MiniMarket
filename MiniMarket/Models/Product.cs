@@ -6,9 +6,9 @@ public class Product
     public string ProductName { get; set; }
     public string ProductDescription { get; set; }
     public decimal Price { get; set; }
+    public string ImageUrl { get; set; }
     public string ProductImageUrl { get; set; }
     public int CategoryId { get; set; }
     public int QuantityOnStock { get; set; }
-    
-    
+    public string Category { get; set; }
 }

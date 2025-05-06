@@ -56,7 +56,10 @@ public  class ProductRepository :IProductRepository
             await _appDbContext.SaveChangesAsync();
         }
     }
-
+    public IQueryable<Product> GetQueryable()
+    {
+        return _appDbContext.Products.AsQueryable();
+    }
     public async Task DeleteAsync(int id) // Admin
     {
         var product = await _appDbContext.Products.FindAsync(id);

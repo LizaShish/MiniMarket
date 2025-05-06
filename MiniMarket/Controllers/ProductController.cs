@@ -16,9 +16,9 @@ public class ProductController : Controller
     }
     
     [HttpGet]
-    public IActionResult Index(int page = 1, int pageSize = 10)
+    public async Task<IActionResult> Index(string? category, int page = 1, int pageSize = 10)
     {
-        var allProducts = _productService.GetProduct();
+        var allProducts = await _productService.GetProduct();
         var totalCount = allProducts.Count();
         var pageProduct = PaginationHelper.Paginate(allProducts, page, pageSize).ToList();
         var totalPages = PaginationHelper.GetTotalPages(totalCount, pageSize);
@@ -29,9 +29,19 @@ public class ProductController : Controller
             PageNumber = page,
             TotalPages = totalPages,
             TotalCount = totalCount,
+            Category = category,
             PageSize = pageSize
         };
         
         return View(viewModel);
+    }
+    
+    [HttpGet]
+    public IActionResult Details(int id)
+    {
+        var product = _productService.GetProductById(id);
+        if(product == null)
+          return NotFound();
+        return View(product);
     }
 }

@@ -10,4 +10,5 @@ public interface IProductService
     Task CreateAsync(ProductDTO productDTO);
     Task UpdateAsync(ProductDTO productDTO);
     Task DeleteAsync(int id);
+    IQueryable<ProductDTO> GetFilteredProducts(string? category, string? searchQuery);
 }
