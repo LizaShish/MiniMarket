@@ -1,0 +1,33 @@
+using MiniMarket.Models;
+@model MiniMarket.DTOs.OrderDTO
+
+@{
+    Layout = null;
+}
+
+<h2>Order №@Model.Id</h2>
+<p><strong>Date:</strong>@Model.OrderDate.ToShortDateString()</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Price</td>
+            <td>@item.Quantity</td>
+            <td>@item.Total</td>
+        </tr>
+    }
+    </tbody>
+    <p><strong>Total:</strong> @Model.Items.Sum(i => i.Price * i.Quantity) ₽</p>
+    
+</table>

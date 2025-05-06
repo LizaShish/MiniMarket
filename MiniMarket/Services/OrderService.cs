@@ -1,7 +1,7 @@
 using AutoMapper;
-using MiniMarket.DTOs;
 using MiniMarket.Interfaces;
 using MiniMarket.Models;
+using MiniMarket.DTOs;
 
 namespace MiniMarket.Services;
 
@@ -32,8 +32,16 @@ public class OrderService : IOrderService
     { 
       UserId = userId,  
       OrderDate = DateTime.Now,
-      Items = new List<OrderItem>()
+      Items = cart.Items.Select(item => new OrderItem
+      {
+        ProductId = item.ProductId,
+        Quantity = item.Quantity,
+        ProductPrice = item.Price  
+      }).ToList()
     };
+
+    await _orderRepository.AddOrderAsync(order);
+    await _cartService.ClearCartAsync(userId);
   }
 
   public async Task<IEnumerable<OrderDTO>> GetUsersOrders(int userId)

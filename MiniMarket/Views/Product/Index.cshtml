@@ -1,0 +1,29 @@
+@model MiniMarket.Models.ProductListViewModel
+
+@{
+    Layout = null;
+}
+<h2>Catalog</h2>
+
+@foreach(var product in Model.Products)
+{
+    <div class="product-item">
+        <img src="@product.ImageUrl" alt="@product.Name" width="150" />
+        <h3>@product.Name</h3>
+        <p>@product.Price</p>
+        <a href="@Url.Action("Details", "Product",new {id = product.Id})">Details</a>
+    </div>
+}
+
+<div class="pagination">
+    Page @Model.PageNumber in @Model.TotalPages
+    @if (Model.PageNumber > 1)
+    {
+        <a href="@Url.Action("Index", new { page = Model.PageNumber - 1 })">Назад</a>
+    }
+    @if (Model.PageNumber < Model.TotalPages)
+    {
+        <a href="@Url.Action("Index", new { page = Model.PageNumber + 1 })">Вперед</a>
+    }
+    
+</div>
