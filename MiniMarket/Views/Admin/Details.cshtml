@@ -1,0 +1,37 @@
+@model MiniMarket.DTOs.OrderDTO
+
+<h2>Details #@Model.Id</h2>
+
+<p><strong>User:</strong>@Model.UserEmail</p>
+<p><strong>Date:</strong>@Model.OrderDate</p>
+<p><strong>Status:</strong>@Model.Status</p>
+
+<h4>Product in order:</h4>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>@item.ProductName</td>
+            <td>@item.Price</td>
+            <td>@item.Quantity</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<form asp-action="UpdateStatus" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label>Change status:</label>
+        <input type="text" name="ststus" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - MiniMarket</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="~/MiniMarket.styles.css" asp-append-version="true"/>
+</head>
+<body>
+<header class="bg-dark text-white p-3 mb-4">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <h1 class="h3">🛒 MiniMarket</h1>
+            <nav>
+                <a class="text-white me-3" asp-controller="Product" asp-action="Index">Products</a>
+                <a class="text-white me-3" asp-controller="Cart" asp-action="Index">Cart</a>
+                <a class="text-white me-3" asp-controller="Order" asp-action="MyOrders">My Orders</a>
+                <a class="text-white me-3" asp-controller="Admin" asp-action="Orders">Admin</a>
+                <a class="text-white" asp-controller="Account" asp-action="Logout">Logout</a>
+            </nav>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+</div>
+@if (User.Identity.IsAuthenticated)
+{
+    <form asp-controller="Account" asp-action="Logout" method="get">
+        <button type="submit" class="btn btn-link">Выйти</button>
+    </form>
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+}
+<footer class="bg-light text-center text-muted py-3 mt-4">
+    <div class="container">
+        &copy; @DateTime.Now.Year - MiniMarket
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
