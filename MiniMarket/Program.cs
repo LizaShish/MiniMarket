@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MiniMarket;
 using MiniMarket.Interfaces;
@@ -16,13 +17,27 @@ builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICartRepository, CartRepository>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderRepository, OrderRepository>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<int>>()
+    .AddEntityFrameworkStores<AppDBContext>()
+    .AddDefaultTokenProviders();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/Identity/Account/Login";
+    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+});
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDBContext>();
 }
-builder.Services.AddAutoMapper(typeof(MappingProfile));
-// Configure the HTTP request pipeline.
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await DbInitializer.SeedRolesAndAdminAsync(services);
+}
+
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
@@ -32,10 +47,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-app.UseRouting();
-
+app.UseAuthentication(); // ОБЯЗАТЕЛЬНО перед Authorization
 app.UseAuthorization();
+app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",

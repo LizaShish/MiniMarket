@@ -16,14 +16,14 @@ public class ProductService : IProductService
         _productRepository = productRepository;
         _mapper = mapper;
     }
-    public async Task<IQueryable<ProductDTO>> GetProduct()
+    public async Task<List<ProductDTO>> GetProduct()
     {
         string search = "";
         int page = 1;
         int pageSize = 10;
-
+        
         var products = await _productRepository.GetAll(search, page, pageSize);
-        return _mapper.Map<IQueryable<ProductDTO>>(products);
+        return _mapper.Map<List<ProductDTO>>(products);
     }
 
     public async Task<ProductDTO?> GetProductById(int id)

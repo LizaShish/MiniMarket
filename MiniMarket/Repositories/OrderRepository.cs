@@ -36,4 +36,21 @@ public class OrderRepository:IOrderRepository
             .FirstOrDefaultAsync(o => o.Id == orderId);
     }
     
+    public async Task<IEnumerable<Order>> GetAllOrdersAsync()
+    {
+        return await _appDbContext.Orders
+            .Include(o => o.Items)
+            .ThenInclude(i => i.Product)
+            .ToListAsync();
+    }
+
+    public async Task UpdateOrderStatusAsync(int orderId, string newStatus)
+    {
+        var order = await _appDbContext.Orders.FindAsync(orderId);
+        if (order != null)
+        {
+            order.Status = newStatus;
+            await _appDbContext.SaveChangesAsync();
+        }
+    }
 }

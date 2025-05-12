@@ -1,0 +1,38 @@
+@model IEnumerable<MiniMarket.DTOs.OrderDTO>
+
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var order in Model)
+    { <tr>
+         <td>@order.Id</td>
+         <td>@order.UserEmail</td>
+         <td>@order.OrderDate</td>
+         <td>
+                <a asp-action="Details" asp-route-id="@order.Id">Details</a>
+         </td>
+         <td>
+            <form asp-action="UpdateStatus" method="post">
+                <input type="hidden" name="orderId" value="@order.Id"/>
+                <select name="status">
+                    <option value="Pending">Pending</option>
+                    <option value="In progress">In progress</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+                <button type="submit">Update</button>
+            </form>
+         </td>
+        </tr>
+    
+    }
+    </tbody>
+</table>

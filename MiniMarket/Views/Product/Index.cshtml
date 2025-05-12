@@ -1,10 +1,13 @@
 @model MiniMarket.Models.ProductListViewModel
 
-@{
-    Layout = null;
-}
 <h2>Catalog</h2>
 
+@if (User.IsInRole("Admin"))
+{
+    <div>
+        <a href="@Url.Action("Create", "Product")" class="btn btn-primary">Add Products</a>
+    </div>
+}
 @foreach(var product in Model.Products)
 {
     <div class="product-item">
@@ -12,6 +15,13 @@
         <h3>@product.Name</h3>
         <p>@product.Price</p>
         <a href="@Url.Action("Details", "Product",new {id = product.Id})">Details</a>
+        @if (User.IsInRole("Admin"))
+        {
+            <a href="@Url.Action("Edit", "Product", new { id = product.Id })" class="btn btn-warning">Редактировать</a>
+            <form asp-action="Delete" asp-controller="Product" method="post" asp-route-id="@product.Id" style="display:inline;">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Удалить продукт?');">Удалить</button>
+            </form>
+        }
     </div>
 }
 

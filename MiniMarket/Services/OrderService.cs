@@ -8,12 +8,12 @@ namespace MiniMarket.Services;
 public class OrderService : IOrderService
 {
   private  readonly IProductRepository _productRepository;
-  private readonly Mapper _mapper;
+  private readonly IMapper _mapper;
   private readonly ICartService _cartService;
   private readonly IOrderRepository _orderRepository;
 
 
-  public OrderService(IProductRepository productRepository, Mapper mapper, ICartService cartService, IOrderRepository orderRepository)
+  public OrderService(IProductRepository productRepository, IMapper mapper, ICartService cartService, IOrderRepository orderRepository)
   {
     _productRepository = productRepository;
     _mapper = mapper;
@@ -57,4 +57,16 @@ public class OrderService : IOrderService
       return null;
     return _mapper.Map<OrderDTO>(order);
   }
+
+  public async Task<IEnumerable<OrderDTO>> GetAllOrdersAsync()
+  {
+    var orders = await _orderRepository.GetAllOrdersAsync();
+    return _mapper.Map<IEnumerable<OrderDTO>>(orders);
+  }
+
+  public async Task UpdateOrderStatusAsync(int orderId, string newStatus)
+  {
+    await _orderRepository.UpdateOrderStatusAsync(orderId, newStatus);
+  }
+  
 }

@@ -18,8 +18,36 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\Liza\RiderProjects\MiniMarket\MiniMarket\MiniMarket
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Admin/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Admin/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Admin/OrdersAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3JkZXJzQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Order/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Order/Details.cshtml]
@@ -28,6 +56,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Order/MyOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcTXlPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Product/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Product/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Liza/RiderProjects/MiniMarket/MiniMarket/MiniMarket/Views/Product/Index.cshtml]

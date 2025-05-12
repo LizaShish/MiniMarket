@@ -1,12 +1,9 @@
 using MiniMarket.Models;
 @model MiniMarket.DTOs.OrderDTO
 
-@{
-    Layout = null;
-}
-
 <h2>Order №@Model.Id</h2>
 <p><strong>Date:</strong>@Model.OrderDate.ToShortDateString()</p>
+<p><strong>Status:</strong> @Model.Status</p>
 
 <table class="table">
     <thead>

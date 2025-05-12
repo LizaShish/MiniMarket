@@ -1,0 +1,41 @@
+@model MiniMarket.DTOs.CartDTO
+
+<h2>Catr</h2>
+
+@if (!Model.Items.Any())
+{
+    <p>Cart is empty</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model.Items)
+        {
+            <tr>
+                <td>@item.ProductName</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+                <td>
+                    <form asp-action="Remove" method="post">
+                        <input type="hidden" name="productId" value="@item.ProductId" />
+                        <button type="submit" class="btn btn-danger btn-sm">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <form asp-action="Clear" method="post">
+        <button type="submit" class="btn btn-warning">Clear Cart</button>
+    </form>
+
+    <a href="/Order/Checkout" class="btn btn-success">Place an order</a>
+}
